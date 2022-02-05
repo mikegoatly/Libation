@@ -117,6 +117,7 @@ That naming may not be desirable for everyone, but it's an easy change to instea
             AaxFile.ConvertToMultiMp3(splitChapters, newSplitCallback =>
             {
                 createOutputFileStream(++chapterCount, splitChapters, newSplitCallback);
+                newSplitCallback.LameConfig.ID3.Title = newSplitCallback?.Chapter?.Title;
                 newSplitCallback.LameConfig.ID3.Track = chapterCount.ToString();
             });
         }
